@@ -1,0 +1,502 @@
+{
+
+ 
+  "features": [
+    {
+      "attributes": {
+        "OBJECTID": 401,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Hoành Bồ",
+        "DUNG_TICH": 3000,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 4.5,
+        "NGUOI_HC": "tinhbv",
+        "THOI_GIAN_HC": 1709738388000,
+        "NGUOI_KT": "tinhbv",
+        "THOI_GIAN_KT": 1697450633000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": "tinhbv -> 24/02/2024 15:47:52\r\ntinhbv -> 04/03/2024 17:00:59\r\ntinhbv -> 04/03/2024 17:01:21; tinhbv:6/3/2024 3:19:33 PM; tinhbv:6/3/2024 3:19:48 PM",
+        "ID_FILEANH": "352803__JLPJ",
+        "CONG_SUAT_TK": 20000,
+        "CONG_SUAT_VH": 12000
+      },
+      "geometry": {
+        "x": 107.06276078200005,
+        "y": 21.04270432000004
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 405,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Yên Lập",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "haiduong",
+        "THOI_GIAN_KT": 1709218259000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "5024475__KB3N",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 106.88336700200006,
+        "y": 21.00110531200005
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 803,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Khu xử lý Quảng Yên",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": "anhlt",
+        "THOI_GIAN_HC": 1709800272000,
+        "NGUOI_KT": "anhlt",
+        "THOI_GIAN_KT": 1709800240000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": "anhlt:3/7/2024 8:31:11 AM",
+        "ID_FILEANH": "2913374__KCGH",
+        "CONG_SUAT_TK": 4400,
+        "CONG_SUAT_VH": 6000
+      },
+      "geometry": {
+        "x": 106.82064697600003,
+        "y": 20.941513216000033
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 804,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Khu xử lý Phong Cốc",
+        "DUNG_TICH": 100,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": null,
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 1.5,
+        "NGUOI_HC": "anhlt",
+        "THOI_GIAN_HC": 1715595041000,
+        "NGUOI_KT": "anhlt",
+        "THOI_GIAN_KT": 1709801083000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": "anhlt -> 07/03/2024 09:03:36\r\nanhlt -> 07/03/2024 09:06:44\r\nanhlt -> 07/03/2024 09:07:23; anhlt:13/05/2024 10:10:41 SA",
+        "ID_FILEANH": "4345872__KCGH",
+        "CONG_SUAT_TK": 2500,
+        "CONG_SUAT_VH": 2500
+      },
+      "geometry": {
+        "x": 106.80824821900006,
+        "y": 20.907873146000043
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 805,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Nhà máy nước Cẩm La",
+        "DUNG_TICH": 100000,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": null,
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 15,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "anhlt",
+        "THOI_GIAN_KT": 1709802174000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "20758__KCGI",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 106.80874035700003,
+        "y": 20.925024740000026
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 807,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Khu xử lý Liên Hòa",
+        "DUNG_TICH": 70,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": null,
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 12,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "anhlt",
+        "THOI_GIAN_KT": 1709802330000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "434595__KCGI",
+        "CONG_SUAT_TK": 1000,
+        "CONG_SUAT_VH": 1000
+      },
+      "geometry": {
+        "x": 106.83775650100006,
+        "y": 20.875646723000045
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1603,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Miếu Hương",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "huongnh",
+        "THOI_GIAN_KT": 1711709974000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "5857261__KC3J",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 106.58570344900005,
+        "y": 21.10059710400003
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1604,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Nhà máy nước Diễn Vọng",
+        "DUNG_TICH": 7000,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 8,
+        "NGUOI_HC": "namdp",
+        "THOI_GIAN_HC": 1715079797000,
+        "NGUOI_KT": "namdp",
+        "THOI_GIAN_KT": 1714034588000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": "namdp:7/5/2024 11:03:07 AM; namdp:7/5/2024 11:03:17 AM",
+        "ID_FILEANH": "4222820__KDYH",
+        "CONG_SUAT_TK": 60000,
+        "CONG_SUAT_VH": 75000
+      },
+      "geometry": {
+        "x": 107.18965788400004,
+        "y": 21.026650172000075
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1605,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Nhà máy nước Dương Huy",
+        "DUNG_TICH": 400,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": null,
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "namdp",
+        "THOI_GIAN_KT": 1714034753000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "4519717__KDYH",
+        "CONG_SUAT_TK": 7000,
+        "CONG_SUAT_VH": 5000
+      },
+      "geometry": {
+        "x": 107.23808527000006,
+        "y": 21.07675987700003
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2004,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "UB06-D600",
+        "TEN": "Nhà máy nước Đồng Mây 2",
+        "DUNG_TICH": 3000,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 44,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "hungnm",
+        "THOI_GIAN_KT": 1714667049000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "2159812__KEBP",
+        "CONG_SUAT_TK": 16000,
+        "CONG_SUAT_VH": 16000
+      },
+      "geometry": {
+        "x": 106.77948490500006,
+        "y": 21.027344392000032
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2005,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "UB06-D600",
+        "TEN": "Nhà máy nước Đồng Mây 1",
+        "DUNG_TICH": 1000,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 44,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "hungnm",
+        "THOI_GIAN_KT": 1714667145000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "2511250__KEBP",
+        "CONG_SUAT_TK": 14000,
+        "CONG_SUAT_VH": 5000
+      },
+      "geometry": {
+        "x": 106.77972306600009,
+        "y": 21.027725867000072
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2404,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Trạm bơm 1 Cao Vân",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "1",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "namdp",
+        "THOI_GIAN_KT": 1715130563000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "859709__KEHA",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 107.20972728400005,
+        "y": 21.06381863100006
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2804,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Kim Tinh",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "cuongtm",
+        "THOI_GIAN_KT": 1715178448000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "2717677__KEHN",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 107.90710096500004,
+        "y": 21.543646375000037
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 3205,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Đoan Tĩnh",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "cuongtm",
+        "THOI_GIAN_KT": 1715180899000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "817609__KEHO",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 107.95692405200003,
+        "y": 21.534460369000044
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 3604,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "Nhà máy nước Hải Hà",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "cuongtm",
+        "THOI_GIAN_KT": 1715242068000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "72533__KEIH",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 107.73580553600004,
+        "y": 21.451076803000035
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 4004,
+        "MA_PHUONG": "0101",
+        "TUYEN": null,
+        "MA": "",
+        "TEN": "NMN Vạn Gia",
+        "DUNG_TICH": 0,
+        "KIEU": null,
+        "SO_ONG_VAO": null,
+        "SO_ONG_RA": null,
+        "TINH_TRANG": "4",
+        "ROTATE": null,
+        "AP_LUC_DAU_BOM": 0,
+        "NGUOI_HC": null,
+        "THOI_GIAN_HC": null,
+        "NGUOI_KT": "cuongtm",
+        "THOI_GIAN_KT": 1715244290000,
+        "THUNG_HO_SO": null,
+        "MA_HUYEN": null,
+        "GHI_CHU": null,
+        "LUUVET": null,
+        "ID_FILEANH": "4446337__KEIH",
+        "CONG_SUAT_TK": 0,
+        "CONG_SUAT_VH": 0
+      },
+      "geometry": {
+        "x": 107.94307935200004,
+        "y": 21.381928798000047
+      }
+    }
+  ]
+}
