@@ -5,7 +5,7 @@ interface MapHeaderProps {
 export default function MapHeader({ scale = 1 }: MapHeaderProps) {
   return (
     <div
-      className='absolute top-0 left-0 z-20 rounded-lg bg-white p-2 shadow-md'
+      className='absolute top-0 left-0 z-1000 rounded-lg bg-white p-2 shadow-md'
       style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
     >
       <div className='flex items-center gap-4'>

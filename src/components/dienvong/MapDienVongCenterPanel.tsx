@@ -9,18 +9,15 @@ import {
   Polyline,
   useMap
 } from 'react-leaflet';
-import L from 'leaflet';
+import L, { LatLngBoundsExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import {
-  stations as initialStations,
-  StationInfo
-} from '../../../../components/dienvong/station';
+import { stations as initialStations, StationInfo, stations } from './station';
 // import { iconPosition } from '../icon';
-import {
-  iconPositions,
-  iconPosition
-} from '../../../../components/dienvong/icon';
-
+import { iconPositions, iconPosition } from './icon';
+import NhaMayComponent from '@/app/dashboard/hethongcapnuoc/NhaMayComponent';
+import BomTangApComponent from '@/app/dashboard/hethongcapnuoc/BomTangApComponent';
+import BeChuaComponent from '@/app/dashboard/hethongcapnuoc/BeChuaComponent';
+import StationDetailModal from '../modal/StationDetailModal';
 // Fix icon mặc định của Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -39,21 +36,50 @@ function ForceResize() {
   return null;
 }
 
+// Hàm tính bounds từ danh sách station
+function getStationsBounds(padding = 0.01): LatLngBoundsExpression {
+  const lats = stations.map((s) => s.position[0]);
+  const lngs = stations.map((s) => s.position[1]);
+
+  const minLat = Math.min(...lats) - padding;
+  const maxLat = Math.max(...lats) + padding;
+  const minLng = Math.min(...lngs) - padding;
+  const maxLng = Math.max(...lngs) + padding;
+
+  return [
+    [minLat, minLng], // Tây Nam
+    [maxLat, maxLng] // Đông Bắc
+  ];
+}
+
+// Component helper để auto fit map
+function FitStationsBounds() {
+  const map = useMap();
+  const bounds = getStationsBounds(0.02); // padding 0.02
+  map.fitBounds(bounds); // tự căn giữa + zoom vừa khít
+  return null;
+}
+
 export default function MapDienVongCenterPanel() {
   const [stations, setStations] = useState<StationInfo[]>(initialStations);
-
+  const [selectedStation, setSelectedStation] = useState<StationInfo | null>(
+    null
+  ); // ✅ Thêm state modal
   return (
     <div className='relative h-full w-full'>
       <MapContainer
-        center={[21.01417 + 0.01, 107.20167 + 0.01]}
+        center={[21.01417, 107.20167 + 0.01]}
         zoom={13}
         scrollWheelZoom={false}
         dragging={true}
         zoomControl={false}
-        maxBounds={[
-          [21.0, 106.8], // Tây Nam (lat thấp nhất gần = center.lat)
-          [21.05, 107.6] // Đông Bắc (lat cao nhất gần = center.lat)
-        ]}
+        doubleClickZoom={false}
+        // maxBounds={[
+        //   [21.0, 106.8], // Tây Nam (lat thấp nhất gần = center.lat)
+        //   [21.05, 107.6] // Đông Bắc (lat cao nhất gần = center.lat)
+        // ]}
+
+        maxBounds={getStationsBounds(0.05)} // ngăn pan ra ngoài
         // giới hạn tọa độ: [SouthWest, NorthEast]
         maxBoundsViscosity={1.0}
         style={{ height: '100%', width: '100%' }}
@@ -62,7 +88,6 @@ export default function MapDienVongCenterPanel() {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
           attribution='&copy; OpenStreetMap contributors'
         />
-
         {stations.map((station, idx) => (
           <Marker
             key={station.id}
@@ -74,9 +99,15 @@ export default function MapDienVongCenterPanel() {
               direction='top'
               offset={[0, 50]}
               permanent
+              interactive={true} // 🔥 Bật chế độ tương tác
               className='rounded bg-white p-2 text-xs whitespace-pre-line shadow-md md:text-sm'
             >
-              <div className='font-bold text-blue-600'>{station.title}</div>
+              <div
+                className='pointer-events-auto cursor-pointer font-bold text-blue-600 hover:underline'
+                onClick={() => setSelectedStation(station)} // mở modal
+              >
+                {station.title}
+              </div>
               {station.waterLevel !== undefined && (
                 <div>Mực nước: {station.waterLevel} m</div>
               )}
@@ -126,7 +157,6 @@ export default function MapDienVongCenterPanel() {
             })()}
           </Marker>
         ))}
-
         {/* Hiển thị các iconposition dạng vòng tròn số */}
         {iconPositions.map((pos: iconPosition) => {
           const icon = L.divIcon({
@@ -144,9 +174,21 @@ export default function MapDienVongCenterPanel() {
             />
           );
         })}
-
         <ForceResize />
+        {/* <FitStationsBounds />  */}
+        {/* <- tự căn map theo stations */}
+        <BeChuaComponent />
+        <BomTangApComponent />
+        <NhaMayComponent />
       </MapContainer>
+
+      {/* ✅ Modal nằm ngoài MapContainer */}
+      {selectedStation && (
+        <StationDetailModal
+          station={selectedStation}
+          onClose={() => setSelectedStation(null)}
+        />
+      )}
     </div>
   );
 }

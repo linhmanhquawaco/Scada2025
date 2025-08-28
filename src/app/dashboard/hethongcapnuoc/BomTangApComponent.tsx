@@ -49,10 +49,10 @@ const BomTangApComponent: React.FC = () => {
           >
             <Popup>
               <div>
-                <h2 className='font-semibold text-blue-700'>
+                <h2 className='font-semibold text-green-500'>
                   {feature.attributes.TRAM_BOM}
                 </h2>
-                <h2>
+                {/* <h2>
                   <span>CS danh nghĩa:</span>{' '}
                   <span className='font-semibold'>
                     {feature.attributes.CS_DANH_NGHIA}
@@ -63,7 +63,7 @@ const BomTangApComponent: React.FC = () => {
                   <span className='font-semibold'>
                     {feature.attributes.CS_DONG_CO}
                   </span>
-                </h2>
+                </h2> */}
               </div>
             </Popup>
           </Marker>

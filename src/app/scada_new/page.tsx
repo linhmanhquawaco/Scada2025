@@ -77,7 +77,7 @@ export default function MapPage() {
         {areas.map((area) => (
           <Link
             key={area.id}
-            href={`/map/${area.id}`}
+            href={`/scada_new/${area.id}`}
             className='absolute rounded bg-blue-500 px-2 py-1 text-xs text-white'
             style={{
               top: area.top,
