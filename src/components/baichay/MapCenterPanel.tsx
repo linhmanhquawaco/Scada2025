@@ -25,7 +25,6 @@ export default function MapCenterPanel() {
       <BeChuaComponent />
       <BomTangApComponent />
       <NhaMayComponent />
-
       {/* <TuyenOngComponent /> */}
     </MapContainer>
   );

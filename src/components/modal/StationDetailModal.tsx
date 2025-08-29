@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { StationInfo } from '../dienvong/station';
+import { StationInfo } from '../../data/station/station_dv';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format, parseISO } from 'date-fns';
@@ -73,22 +73,6 @@ export default function StationDetailModal({ station, onClose }: Props) {
           >
             ✕
           </button>
-        </div>
-
-        {/* Thông tin station hiện tại */}
-        <div className='mb-4 space-y-1 text-gray-800'>
-          {station.waterLevel !== undefined && (
-            <div>Mực nước: {station.waterLevel} m</div>
-          )}
-          {station.waterLevel2 !== undefined && (
-            <div>Mực nước 2: {station.waterLevel2} m</div>
-          )}
-          {station.pressure !== undefined && (
-            <div>Áp suất: {station.pressure} bar</div>
-          )}
-          {station.flow !== undefined && (
-            <div>Lưu lượng: {station.flow} m³/h</div>
-          )}
         </div>
 
         {/* Bộ chọn ngày + Toggle view */}

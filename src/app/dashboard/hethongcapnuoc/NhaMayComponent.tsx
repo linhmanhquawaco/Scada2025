@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngExpression } from 'leaflet';
-import { Feature, NhaMayNuocData } from '../../../types/NhaMayNuocTypes';
+import {
+  Feature,
+  NhaMayNuocData
+} from '../../../StationInfoType.ts/NhaMayNuocTypes';
 
 // Import custom icon
 import nhamaynuocData from '../../../data/datanuoc/nhamaynuoc.json';

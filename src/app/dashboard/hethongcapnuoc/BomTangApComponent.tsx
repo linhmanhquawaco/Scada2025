@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngExpression } from 'leaflet';
-import { BomTangApData, Feature } from '../../../types/BomTangApTypes';
+import {
+  BomTangApData,
+  Feature
+} from '../../../StationInfoType.ts/BomTangApTypes';
 
 // Import custom icon
 import bomtangapData from '../../../data/datanuoc/bomtangap.json';

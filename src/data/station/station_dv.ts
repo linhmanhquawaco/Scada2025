@@ -1,22 +1,11 @@
 // src/app/map/dienvongcopy/station.ts
 
-export interface StationInfo {
-  id: number;
-  title: string;
-  position: [number, number];
-  offset: [number, number];
-  waterLevel?: number;
-  waterLevel2?: number;
-  alertLevel?: number;
-  overflowLevel?: number;
-  dangerLevel?: number;
-  flow?: number;
-  pressure?: number;
-  notes?: string[];
-}
-export const stations: StationInfo[] = [
+import { StationInfo } from '@/types/StationTypes';
+
+export const stationsDV: StationInfo[] = [
   {
     id: 1,
+    iddiemdo: 'DV01',
     title: 'ĐO MỨC NƯỚC HỒ CAO VÂN',
     position: [21.05694849719061, 107.23360061645508],
     offset: [366, -237],
@@ -29,6 +18,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 4,
+    iddiemdo: 'DV04',
     title: 'Tuyến D800 thép, D630 HDPE trạm 2',
     position: [21.007919694523356, 107.15789794921876],
     offset: [-162, 35],
@@ -38,6 +28,7 @@ export const stations: StationInfo[] = [
 
   {
     id: 5,
+    iddiemdo: 'DV05',
     title: 'ĐO MỨC BỂ 3000M3',
     position: [20.99942613938043, 107.20287322998047],
     offset: [84, 108],
@@ -53,6 +44,7 @@ export const stations: StationInfo[] = [
 
   {
     id: 6,
+    iddiemdo: 'DV06',
     title: 'DV02-D600 Cấp Cẩm Phả',
     position: [20.98355952489907, 107.23737716674806],
     offset: [514, 290],
@@ -70,6 +62,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 8,
+    iddiemdo: 'DV08',
     title: 'DV01-01-D160 Q.Hanh-Đ.Bụt',
     position: [20.98243757925786, 107.16407775878908],
     offset: [-236, 207],
@@ -79,6 +72,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 9,
+    iddiemdo: 'DV09',
     title: 'DV03-D225 Q.Hanh-T.Hồng',
     position: [20.995099048089518, 107.24098205566408],
     offset: [518, 213],
@@ -87,6 +81,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 10,
+    iddiemdo: 'DV10',
     title: 'DV04-D225 T.Hồng - Đ.Chồng',
     position: [21.008560697933067, 107.26003646850587],
     offset: [605, 81],
@@ -96,6 +91,7 @@ export const stations: StationInfo[] = [
 
   {
     id: 11,
+    iddiemdo: 'DV11',
     title: 'Dương Huy - Mông Dương',
     position: [21.05470570160897, 107.27977752685548],
     offset: [722, -238],
@@ -112,6 +108,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 14,
+    iddiemdo: 'DV00',
     title: 'Tổng Q',
     position: [21.037723438590533, 107.17506408691408],
     offset: [-76, -131],
@@ -119,6 +116,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 15,
+    iddiemdo: 'DV02',
     title: 'ĐO MỨC BỂ 4000M3, 3000M3',
     position: [21.02282231132884, 107.2090530395508],
     offset: [201, -90],
@@ -131,7 +129,8 @@ export const stations: StationInfo[] = [
   },
   {
     id: 16,
-    title: 'T.Bơm 1 Cao Vân',
+    iddiemdo: 'DV15',
+    title: 'Trạm Bơm 1 Cao Vân',
     position: [21.043331003758137, 107.20819473266603],
     offset: [201, -90],
     pressure: 0.98,
@@ -139,6 +138,7 @@ export const stations: StationInfo[] = [
   },
   {
     id: 17,
+    iddiemdo: 'DV03',
     title: 'Tuyến DV00-02-D160 Osen',
     position: [20.968011813429065, 107.222957611084],
     offset: [90, 449],
@@ -147,13 +147,15 @@ export const stations: StationInfo[] = [
   },
   {
     id: 18,
-    title: 'P nước thô Cao Vân tại trạm Van GA',
+    iddiemdo: 'DV14',
+    title: 'P nước thô Cao Vân tại trạm Van Giảm áp',
     position: [21.024424654564555, 107.15429306030275],
     offset: [-168, -42],
     pressure: 3.06
   },
   {
     id: 19,
+    iddiemdo: 'DV12',
     title: 'Dương Huy cấp nội bộ',
     position: [21.039646056144857, 107.27668762207033],
     offset: [727, -127],

@@ -11,13 +11,17 @@ import {
 } from 'react-leaflet';
 import L, { LatLngBoundsExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { stations as initialStations, StationInfo, stations } from './station';
+import {
+  stationsDV as initialStations,
+  stationsDV
+} from '../../data/station/station_dv';
 // import { iconPosition } from '../icon';
 import { iconPositions, iconPosition } from './icon';
 import NhaMayComponent from '@/app/dashboard/hethongcapnuoc/NhaMayComponent';
 import BomTangApComponent from '@/app/dashboard/hethongcapnuoc/BomTangApComponent';
 import BeChuaComponent from '@/app/dashboard/hethongcapnuoc/BeChuaComponent';
 import StationDetailModal from '../modal/StationDetailModal';
+import { StationInfo } from '@/types/StationTypes';
 // Fix icon mặc định của Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -38,8 +42,8 @@ function ForceResize() {
 
 // Hàm tính bounds từ danh sách station
 function getStationsBounds(padding = 0.01): LatLngBoundsExpression {
-  const lats = stations.map((s) => s.position[0]);
-  const lngs = stations.map((s) => s.position[1]);
+  const lats = stationsDV.map((s) => s.position[0]);
+  const lngs = stationsDV.map((s) => s.position[1]);
 
   const minLat = Math.min(...lats) - padding;
   const maxLat = Math.max(...lats) + padding;

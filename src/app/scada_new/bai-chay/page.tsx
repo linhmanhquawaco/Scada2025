@@ -1,60 +1,46 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { monitoringData as mockData, MonitoringPoint } from './mockData';
-import MapCenterPanel from './MapCenterPanel';
+import MapCenterPanel from '../../../components/baichay/MapCenterPanel';
+import { StationInfo } from '@/types/StationTypes';
+import { stationsBC } from '@/data/station/station_bc';
 
 export default function HTMangBCPage() {
-  const [currentTime, setCurrentTime] = useState('');
-  const [monitoringData, setMonitoringData] = useState<MonitoringPoint[]>([]);
-  const [scale, setScale] = useState(1);
+  const [monitoringData, setMonitoringData] = useState<StationInfo[]>([]);
 
-  // Xử lý thời gian
+  // Nạp dữ liệu tĩnh trước
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString('vi-VN', {
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        })
-      );
-    };
-
-    updateTime();
-    const timeInterval = setInterval(updateTime, 1000);
-    return () => clearInterval(timeInterval);
+    setMonitoringData(stationsBC);
   }, []);
 
-  // Nạp dữ liệu mock
+  // Giả lập gọi API realtime
   useEffect(() => {
-    setMonitoringData(mockData); // <-- nạp dữ liệu mock chuẩn
-  }, []);
+    async function fetchRealtime() {
+      try {
+        const res = await fetch('/api/monitoring'); // TODO: thay URL thật
+        const realtimeData: Partial<StationInfo>[] = await res.json();
 
-  // Scale khi thay đổi kích thước màn hình
-  useEffect(() => {
-    const handleResize = () => {
-      const baseWidth = 1920; // thiết kế gốc
-      const newScale = window.innerWidth / baseWidth;
-      setScale(newScale > 1 ? 1 : newScale);
-    };
+        setMonitoringData((prev) =>
+          prev.map((station) => {
+            const update = realtimeData.find(
+              (r) => r.iddiemdo === station.iddiemdo
+            );
+            return update ? { ...station, ...update } : station;
+          })
+        );
+      } catch (err) {
+        console.error('Lỗi khi gọi API:', err);
+      }
+    }
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    fetchRealtime();
+    const interval = setInterval(fetchRealtime, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className='h-screen w-screen overflow-auto bg-gray-100'>
-      <div
-        style={{
-          transform: `scale(${scale})`,
-          transformOrigin: 'top left',
-          width: '1920px' // giữ kích thước gốc
-        }}
-      >
-        {/* HEADER */}
+    <div className='h-screen w-screen overflow-hidden bg-gray-100'>
+      <div className='flex h-full flex-col'>
         {/* HEADER */}
         <div className='bg-blue-500 text-center text-white'>
           <div className='h-6 text-base leading-6 font-bold'>
@@ -64,88 +50,63 @@ export default function HTMangBCPage() {
             <span>
               HỆ THỐNG QUẢN LÝ LƯU LƯỢNG VÀ ÁP LỰC TỪ XA MẠNG LƯỚI CẤP NƯỚC
             </span>
-            <span className='rounded bg-white/10 px-2 text-white'>
-              {currentTime}
-            </span>
           </div>
         </div>
 
         {/* MAIN CONTENT */}
-        <div className='flex h-[calc(100vh-32px)]'>
+        <div className='flex flex-1'>
           {/* Left Panel */}
-          <div className='h-full w-[21%] space-y-3 overflow-y-auto bg-cyan-50 p-2'>
+          <div className='h-full w-[21%] min-w-[180px] space-y-3 overflow-y-auto bg-cyan-50 p-2'>
             {monitoringData.slice(0, 15).map((item) => (
               <div
                 key={item.id}
                 className='rounded-lg border border-blue-400 bg-white text-[11px] shadow-sm'
               >
                 <div className='grid grid-cols-[1fr_auto_auto] items-center divide-x divide-blue-400 border-b border-blue-400 px-2 py-1'>
-                  <span className='truncate px-2 text-left font-bold'>
-                    {item.name}
-                  </span>
+                  <span className='truncate font-bold'>{item.title}</span>
                   <span className='w-14 px-2 text-center font-bold'>
-                    {item.time}
+                    {item.time ?? '--:--'}
                   </span>
-                  <span className='w-8 px-2 text-center font-bold text-red-600'>
-                    {item.status}
+                  <span className='w-10 px-2 text-center font-bold text-blue-600'>
+                    {item.iddiemdo}
                   </span>
                 </div>
                 <div className='border-t border-gray-100 px-2 py-1 text-left leading-snug'>
                   <span className='font-medium'>Tức thời:</span>
-                  {item.level && <span> H bể: {item.level} (m)</span>}
+                  {item.waterLevel && <span> H bể: {item.waterLevel} (m)</span>}
                   {item.pressure && <span> P: {item.pressure} (bar)</span>}
                   {item.flow && <span> ; Q: {item.flow} (m³/h)</span>}
-                  {item.note && (
-                    <div className='mt-1 text-gray-500 italic'>{item.note}</div>
-                  )}
                 </div>
               </div>
             ))}
           </div>
 
           {/* Center Panel */}
-          <div className='w-[58%] bg-cyan-50 text-center'>
-            {/* <div
-              className='relative mx-auto h-full bg-cover bg-center'
-              style={{
-                backgroundImage:
-                  'url(/placeholder.svg?height=579&width=540&query=water+distribution+network+map)'
-              }}
-            /> */}
-
-            {/* <div className='relative mx-auto h-full w-full overflow-hidden'>
-              <img
-                src='/baichay.jpg'
-                alt='Sơ đồ mạng cấp nước'
-                className='h-full w-full object-cover'
-              />
-            </div> */}
-
+          <div className='h-full flex-1 bg-cyan-50 text-center'>
             <MapCenterPanel />
           </div>
 
           {/* Right Panel */}
-          <div className='h-full w-[21%] space-y-3 overflow-y-auto bg-cyan-50 p-2'>
+          <div className='h-full w-[21%] min-w-[180px] space-y-3 overflow-y-auto bg-cyan-50 p-2'>
             {monitoringData.slice(15).map((item) => (
               <div
                 key={item.id}
                 className='rounded-lg border border-blue-500 bg-white text-[11px] shadow-sm'
               >
                 <div className='grid grid-cols-[1fr_auto_auto] items-center border-b border-gray-200 px-2 py-1'>
-                  <span className='truncate font-bold'>{item.name}</span>
-                  <span className='mx-2 w-12 text-center font-bold'>
-                    {item.time}
+                  <span className='truncate font-bold'>{item.title}</span>
+                  <span className='w-14 px-2 text-center font-bold'>
+                    {item.time ?? '--:--'}
                   </span>
-                  <span className='w-8 text-center font-bold text-red-600'>
-                    {item.status}
+                  <span className='w-10 px-2 text-center font-bold text-blue-600'>
+                    {item.iddiemdo}
                   </span>
                 </div>
                 <div className='border-t border-gray-100 px-2 py-1 text-left leading-snug'>
                   <span className='font-semibold'>Tức thời:</span>
-                  {item.level && <span> H bể: {item.level} (m)</span>}
+                  {item.waterLevel && <span> H bể: {item.waterLevel} (m)</span>}
                   {item.pressure && <span> P: {item.pressure} (bar)</span>}
                   {item.flow && <span> ; Q: {item.flow} (m³/h)</span>}
-                  {item.note && <span> ; Q: {item.note} (m³/h)</span>}
                 </div>
               </div>
             ))}

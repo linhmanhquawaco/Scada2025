@@ -1,4 +1,4 @@
-import { NavItem } from '@/types';
+import { NavItem } from '@/StationInfoType.ts';
 
 export type Product = {
   photo_url: string;

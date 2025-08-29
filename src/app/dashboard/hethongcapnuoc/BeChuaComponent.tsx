@@ -5,7 +5,7 @@ import L, { LatLngExpression } from 'leaflet';
 
 // Import custom icon
 import bechuaData from '../../../data/datanuoc/bechua.json';
-import { BeChuaData, Feature } from '../../../types/BeChuaTypes';
+import { BeChuaData, Feature } from '../../../StationInfoType.ts/BeChuaTypes';
 
 // Tạo đối tượng L.Icon cho icon tùy chỉnh
 const bechuaIcon = new L.Icon({
